@@ -1,0 +1,363 @@
+/* #centers{
+    height: 2000px;
+} */
+/* 吸顶菜单 */
+#centers  #xiding{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.07);
+    width: 100%;
+    background-color: #fff;
+   
+}
+
+#centers  #xiding .content{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+#centers  #xiding .content span:nth-child(1){
+font-size: 18px;
+line-height: 60px;
+}
+#centers  #xiding .content span:nth-child(2){
+    font-size: 12px;
+    color: #616161;
+    line-height: 60px;
+    cursor: pointer;
+}
+#centers  #xiding .content span:nth-child(2):hover{
+    color: #ff6700;
+}
+/* #center_main .content{
+    height: 1438px;
+} */
+#center_main .content>div{
+width: 50%
+
+}
+/* #centers #center_main .right{
+
+} */
+#centers #center_main .right hr{
+   border-top: 1px solid #e0e0e0;
+   margin-bottom: 40px;
+ 
+}
+#centers #center_main .right h2{
+margin-top: 34px;
+font-size: 22px;
+line-height: 22px;
+
+}
+#centers #center_main .right .jieshao{
+    color: #b0b0b0;
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 19px;
+} 
+#centers #center_main .right h3{
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: #ff6700
+}
+#centers #center_main .right .shop_price{
+    margin-bottom: 22px;
+}
+#centers #center_main .right .shop_price span:nth-child(1){
+    font-size: 16px;
+    line-height: 16px;
+    color: #ff6700;
+   
+} 
+/* #centers #center_main .right .shop_price span:nth-child(2){
+    font-size: 14px;
+    line-height: 16px;
+    color: #b0b0b0;
+    text-decoration: line-through;
+    margin-left: 2px;
+   
+}  */
+#centers #center_main .right .dizhi{
+height: 104px;
+border: 1px solid #e0e0e0;
+background-color: #fafafa;
+padding-left: 50px;
+padding-top: 34px;
+background-image: url(../images/dingwei.jpg);
+background-repeat: no-repeat;
+background-position: 22px 30px;
+margin-bottom: 40px;
+}
+#centers #center_main .right .dizhi p{
+    font-size: 14px;
+    line-height: 14px;
+}
+#centers #center_main .right .dizhi p span{
+    color: #ff6700;
+    line-height: 14px;
+}
+#centers #center_main .right .dizhi p:nth-child(1){
+   margin-bottom: 10px
+}
+#centers #center_main .right .dizhi p:nth-child(1) span{
+    margin-left: 10px
+ }
+ #centers #center_main .right .fuwu .fuwu_title{
+     font-size: 16px;
+     line-height: 16px;
+     margin-bottom: 18px;
+ }
+ #centers #center_main .right .fuwu .fuwu_kuang{
+     display: inline-block;
+     width: 300px;
+     height: 44px;
+     border: 1px solid #e0e0e0;
+     line-height: 44px;
+     box-sizing: border-box;
+     font-size: 14px;
+     padding-left:104px;
+     cursor: pointer;   
+ }
+ #centers #center_main .right .fuwu .fuwu_kuang span{
+     color: #b0b0b0;
+     margin-left: 60px;
+ }
+ #centers #center_main .right .fuwu .yanse{
+     margin-bottom: 30px;
+ }
+ #centers #center_main .right .fuwu .rongliang{
+    margin-bottom: 30px;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu{
+    height: 140px;
+    border: 1px solid #e0e0e0;
+    padding-top: 36px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu{
+    cursor: pointer;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .left{
+    width: 80px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#centers #center_main .right .fuwu .yiwai div:nth-child(3){
+    /* border-top: none; */
+    margin-bottom: 30px;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right{
+    width: 445px;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right p:nth-child(1){
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right p:nth-child(1){
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right p:nth-child(2){
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 14px;
+    color: #c1b0b0;
+}
+
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right .p3{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 14px;
+    color: #757575;
+}
+#centers #center_main .right .fuwu .yiwai .yiwai_fuwu .right .p3 span{
+    color: #ff6700
+}
+#centers #center_main .right .fuwu .yanbao{
+    margin-bottom: 30px;
+}
+#centers #center_main .right  .zongji{
+    height: 140px;
+    background-color: #f9f9fa;
+    padding: 38px 30px 0;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+#centers #center_main .right  .zongji p:nth-child(1){
+    font-size: 14px;
+    line-height: 14px;
+    color: #616161;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+#centers #center_main .right  .zongji p:nth-child(2){
+    font-size: 22px;
+    line-height: 22px;
+    color: #ff6700
+}
+#centers #center_main .right .jiaru{
+    font-size: 0;
+    margin-bottom: 24px;
+}
+#centers #center_main .right .jiaru span{
+    display: inline-block;
+    height: 54px;
+    cursor: pointer;
+    font-size: 18px;
+}
+#centers #center_main .right .jiaru span:nth-child(1){
+    width: 300px;
+    background-color: #ff6700;
+    color: #fff;
+    text-align: center;
+    line-height: 54px;
+
+}
+#centers #center_main .right .jiaru span:nth-child(2){
+    width: 142px;
+    background-color: #b0b0b0;
+    color: #fff;
+    text-align: center;
+    line-height: 54px;
+    margin-left: 14px
+
+}
+#centers #center_main .right img{
+    margin-bottom: 30px;
+}
+#centers #price_shuoming{
+    background-color: #f5f5f5;
+  
+}
+#centers #price_shuoming .content{
+
+}
+#centers #price_shuoming .content h5{
+    font-size: 22px;
+    line-height: 78px;
+}
+#centers #price_shuoming .content img{
+    margin-bottom: 50px;
+}
+/* 轮播图 */
+#centers #center_main .left{
+    padding-top: 34px;
+    box-sizing: border-box;
+    padding-right: 40px;
+    /* position: relative; */
+}
+#centers #center_main .left #lunbo{
+    width: 560px;
+    height: 560px;
+    position: relative;
+
+}
+#centers #center_main .left #lunbo .copy{
+    position: absolute;
+    left: 575px;
+    top: 0;
+    width: 100%;
+   height: 100%;
+background-color: pink;
+z-index: 5;
+overflow: hidden;
+display: none;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+#centers #center_main .left #lunbo .copy img{
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#centers #center_main .left #lunbo .zhezhao{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color:#ffc0cb33;
+    z-index:5;
+    cursor: pointer;
+    display: none;
+}
+#centers #center_main .left #lunbo .imglist{
+   width: 100%;
+   height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#centers #center_main .left #lunbo .imglist li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#centers #center_main .left #lunbo .imglist li img{
+    width: 100%;
+    height: 100%;
+}
+#centers #center_main .left #lunbo .posibtn{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    
+}
+#centers #center_main .left #lunbo .posibtn span{
+    display: inline-block;
+    width: 41px;
+    height: 69px;
+    background-image: url(../images/lunbo_button.png);
+    cursor: pointer;
+
+}
+#centers #center_main .left #lunbo .posibtn span:nth-child(1){
+    background-position:-83px center;
+ }
+ #centers #center_main .left #lunbo .posibtn span:nth-child(1):hover{
+    background-position:0px center;
+ }
+
+#centers #center_main .left #lunbo .posibtn span:nth-child(2){
+   background-position:42px center;
+}
+#centers #center_main .left #lunbo .posibtn span:nth-child(2):hover{
+    background-position:125px center;
+ }
+ #centers #center_main .left #lunbo .light {
+     display: flex;
+     justify-content: center;
+     margin-top:10px;
+ }
+ #centers #center_main .left #lunbo .light span{
+    background: #ccc;
+    width: 50px;
+    border: 0;
+    height: 2px;
+    text-indent: -9999px;
+    margin: 0 5px;
+    cursor: pointer;
+ }
+ #centers #center_main .left #lunbo .light .active{
+     background-color: #a3a3a3;
+ }
+ #centers #center_main .left #lunbo .light span:hover{
+     background-color: #a3a3a3;
+ }

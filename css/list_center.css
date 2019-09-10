@@ -1,0 +1,285 @@
+#list #centers{
+    background-color: #f5f5f5;
+}
+#list #centers .content{
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+#list #centers .content .check{
+    margin-bottom: 18px;
+}
+#list #centers .content .check .left a{
+padding:0 30px;
+font-size: 14px;
+line-height: 20px;
+color: #424242;
+border-right: 1px solid #e0e0e0
+}
+#list #centers .content .check .left a:nth-last-child(1){
+    border-right: none
+}
+#list #centers .content .check .left a:hover{
+    color: #ff6700;
+}
+#list #centers .content .check .left a:nth-child(1){
+   padding-left: 0;
+   color: #ff6700;
+}
+#list #centers .content .check .right{
+    font-size: 0
+}
+#list #centers .content .check .right li{
+    float: left;
+    margin-right: 28px;
+}
+#list #centers .content .check .right li:hover a{
+    color: #ff6700
+}
+#list #centers .content .check .right li input{
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+}
+#list #centers .content .check .right li a{
+    font-size: 14px;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #424242;
+}
+#list #centers .content .check .right li:nth-last-child(1){
+    margin-right: 0px;
+}
+/* 商品列表 */
+#list #centers .content #shop{
+    margin-bottom: 16px;
+}
+#list #centers .content #shop>li{
+    position: relative;
+    float: left;
+    width: 296px;
+    height: 441px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    background: #fff;
+    transition: box-shadow .5s linear;
+    padding-top: 47px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+#list #centers .content #shop>li:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+#list #centers .content #shop li:hover .title{
+    display: block;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+}
+#list #centers .content #shop li:nth-child(4n){
+    margin-right: 0px;
+}
+#list #centers .content #shop li .title{
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+    position: absolute;
+    top: 26px;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+}
+#list #centers .content #shop li .title a i{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url(../images/xin.jpg);
+    background-position: -4px -1px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+#list #centers .content #shop li .title a{
+    display: inline-block;
+    height: 100%;
+    /* font-size: 12px; */
+    color: #424242;
+    padding: 3px 4px;
+    vertical-align: middle;
+    font-size: 0;
+    
+}
+#list #centers .content #shop li .title a:hover{
+     font-size: 12px;
+}
+#list #centers .content #shop li .title a:nth-child(2) i{
+    margin-left: 4px;
+    margin-right: 0px;
+    background-image: url(../images/che.jpg);
+    background-position: -4px -1px;
+}
+#list #centers .content #shop li a{
+    display: inline-block
+}
+#list #centers .content #shop li>a>img{
+   width: 200px;
+   height: 200px;
+}
+#list #centers .content #shop li .shop_name{
+    font-size: 14px;
+    color: #424242;
+    line-height: 14px;
+    margin-bottom: 12px;
+    margin-top: 58px
+}
+#list #centers .content #shop li .shop_price{
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 20px;
+}
+#list #centers .content #shop li .shop_price span:nth-child(1){
+    color: #ff6700;
+}
+#list #centers .content #shop li .shop_price span:nth-child(2){
+    color: #b0b0b0;
+    text-decoration: line-through;
+}
+#list #centers .content #shop li .small_img{
+   display: flex;
+   justify-content: center;
+}
+#list #centers .content #shop li .small_img li{
+    float: left;
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 1px solid #dfe0dd;
+    margin: 0 4px;
+    cursor: pointer;
+}
+#list #centers .content #shop li .small_img li img{
+    /* width: 100%;
+    height: 100%; */
+}
+/* 商品页码 */
+#list #centers .content #shop_page{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 62px;
+}
+#list #centers .content #shop_page  span{
+    display: inline-block;
+    width: 48px;
+    height: 30px;
+    color: #b0b0b0;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    margin: 0 7px;
+    font-size: 18px;
+    
+    
+}
+#list #centers .content #shop_page  span:hover{
+    background-color: #b0b0b0;
+    color: #fff;
+   
+
+}
+#list #centers .content #cai .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 34px;
+}
+#list #centers .content #cai .top span{
+    vertical-align: middle
+}
+#list #centers .content #cai .top .line{
+    width: 372px;
+    height: 1px;
+   background-color: #ccc;
+}
+#list #centers .content #cai .top span:nth-child(2){
+    font-size: 28px;
+    line-height: 28px;
+    color: #757575;
+}
+#list #centers .content #cai .bottom{
+   /* overflow: hidden; */
+}
+#list #centers .content #cai .bottom ul{
+    /* position: absolute; */
+    display: flex;
+    width: 2480px;
+    /* top: 0;
+    left: 0; */
+}
+#list #centers .content #cai .bottom li{
+    width: 234px;
+    margin-bottom: 14px;
+    height: 300px;
+    background-color: #fff;
+    text-align: center;
+    margin-right: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px 22px 0;
+    cursor: pointer;
+}
+#list #centers .content #cai .bottom li img{
+margin-bottom: 24px;
+}
+#list #centers .content #cai .bottom li>p:nth-of-type(1) {
+    font-size: 10px;
+    line-height: 10px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-bottom: 16px;
+}
+#list #centers .content #cai .bottom li>p:nth-of-type(2){
+    font-size: 12px;
+    line-height: 12px;
+    color: #ff6700;
+    margin-bottom: 19px;
+}
+#list #centers .content #cai .bottom li>p:nth-of-type(3){
+    height: 28px;
+    width: 120px;
+    border:1px solid #ff6700;
+    background: #fff;
+    color: #ff6700;
+    font-size: 12px;
+    line-height: 28px;
+    margin: auto;
+    display: none;
+    cursor: pointer;
+}
+#list #centers .content #cai .bottom li:hover p:nth-of-type(3){
+    display: block
+}
+#list #centers .content #cai .bottom li:hover p:nth-of-type(3):hover{
+    background-color: #ff6700;
+    color: #fff;
+}
+#list #centers .content #cai .bottom_point{
+    text-align: center;
+}
+#list #centers .content #cai .bottom_point li {
+    width: 6px;
+    height: 6px;
+    background-color: #b0b0b0;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0 13px;
+cursor: pointer;
+}
+#list #centers .content #cai .bottom_point li:hover{
+    background-color: #ff6700;
+
+}

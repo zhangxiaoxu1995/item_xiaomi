@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/denglu.css">
+</head>
+
+<body>
+    <div id="denglu">
+        <div id="denglu_top">
+            <div class="content">
+                <a href="../mian.html">
+                    <img src="https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div id="banner">
+            <div id="yanzheng">
+                <div class="title_inf">123</div>
+                <div class="check">
+                    <span>帐号登录</span>
+                    <i>|</i>
+                    <span>扫码登录</span>
+                </div>
+                <div class="yanzheng_main">
+                    <input type="text" placeholder="邮箱/手机号码/小米ID">
+                    <input type="text" placeholder="密码">
+                    <input type="button" value="登录">
+                    <p>
+                        <span>手机短信登录/注册</span>
+                        <span>
+                            <a href="zhuce.html">立即注册</a>|
+                            <a href="###">忘记密码？</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="yanzheng_main2">
+                    <img src="../images/yanzheng.png" alt="">
+                </div>
+                <div class="yanzheng_main3">
+                    <p>
+                        <span>+86</span>
+                        <input type="text" placeholder="手机号码" class="phone_number3">
+                    </p>
+                    <p>
+                        <input type="text" placeholder="短信验证码" class="denglu_yanzhengma">
+                        <span>
+                            <a href="###" class="yanzhengma">获取验证码</a>
+                        </span>
+                    </p>
+                    <p class="lijidenglu">立即登录/注册</p>
+                    <input type="button" value="用户名密码登录">
+                </div>
+            </div>
+        </div>
+        <div id="denglu_bottom">
+            <p>
+                <a href="###">简体</a>
+                <span>|</span>
+                <a href="###">繁体</a>
+                <span>|</span>
+                <a href="###">English</a>
+                <span>|</span>
+                <a href="###">常见问题</a>
+                <span>|</span>
+                <a href="###">隐私政策</a>
+            </p>
+            <p>小米公司版权所有-京ICP备10046444-
+                <img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png" alt="">京公网安备11010802020134号-京ICP证110507号</p>
+        </div>
+    </div>
+</body>
+<script src="../jq/jquery-1.10.1.min.js"></script>
+<script src="../js/uesfor.js"></script>
+<script>
+    ; (function () {
+        let panduan_cookie = getcookie('name');//进入界面检测，是否有登录状态，如果有，直接跳转到首页，如果没有，可以进行输入判断环节；
+        if (!panduan_cookie) {// 面板切换  点击选项，切换账号和二维码登录界面
+            $('#yanzheng .check').on('click', 'span', function () {
+                $(this).css('color', '#f56600').siblings().css('color', '#666');
+                if ($(this).index() == 2) {
+                    $('.yanzheng_main2').css('display', 'block');
+                    $('.yanzheng_main').css('display', 'none');
+                    $('.yanzheng_main3').css('display', 'none');
+                } else if ($(this).index() == 0) {
+                    $('.yanzheng_main2').css('display', 'none');
+                    $('.yanzheng_main').css('display', 'block');
+                    $('.yanzheng_main3').css('display', 'none');
+                };
+            });
+            $('.yanzheng_main p span').eq(0).click(function () {
+
+                $('.yanzheng_main2').css('display', 'none');
+                $('.yanzheng_main').css('display', 'none');
+                $('.yanzheng_main3').css('display', 'block');
+            });
+            $('.yanzheng_main3>input').click(function () {
+                $('.yanzheng_main2').css('display', 'none');
+                $('.yanzheng_main').css('display', 'block');
+                $('.yanzheng_main3').css('display', 'none');
+            });
+            // 面板1验证
+            $('.yanzheng_main input').eq(0).on('input', function () {//输入框内容发生改变，提示信息会隐藏，不会一直显示
+                $('.title_inf').css('display', 'none');
+            });
+            $('.yanzheng_main input').eq(1).on('input', function () {//输入框内容发生改变，提示信息会隐藏，不会一直显示
+                $('.title_inf').css('display', 'none');
+            });
+            $('.yanzheng_main input').eq(2).click(function () {
+                let uesrname1 = $('.yanzheng_main input').eq(0).val().trim();
+                let password1 = $('.yanzheng_main input').eq(1).val().trim();
+                if (!uesrname1 && !password1) {//面板1，判断1，用户名，密码都未输入
+                    $('.title_inf').html('请输入账号').css('display', 'block')
+                } else if (!uesrname1 && password1) {//面板1，判断2，用户名空，密码有输入
+                    $('.title_inf').html('账号不能为空').css('display', 'block');
+                } else if (uesrname1 && !password1) {//面板1，判断3，用户名输入，密码为空
+                    $('.title_inf').html('请输入密码').css('display', 'block');
+                } else if (uesrname1 && password1) {//面板1，判断4，获取用户名，密码，进入数据库查找
+                    $.ajax({
+                        type: 'get',
+                        url: '../api/denglu.php',
+                        data: {
+                            name: uesrname1,
+                            psw: password1
+                        },
+                        success: str => {
+                            if (str == 'yes') {//登陆成功，将用户名存到cookie,保留7天 ，然后跳转到首页
+                                setcookie('name', uesrname1, 7);
+                                var lujing = localStorage.getItem('lujing');
+                                if (lujing) {
+                                    location.href = lujing
+                                } else { //如果本地没有存储路径，跳转到主页
+                                    location.href = '../mian.html'
+                                }
+
+                            } else {
+                                $('.title_inf').html('请检查您的账号信息，重新输入').css('display', 'block');
+                            }
+                        }
+                    })
+                }
+            })
+        } else if (panduan_cookie) {//如果有登录状态，直接跳转到首页
+            var lujing9 = localStorage.getItem('lujing');
+            location.href = lujing9;
+        };
+        //面板3验证
+        $('.phone_number3').on('input', function () {//输入框内容发生改变，提示信息会隐藏，不会一直显示
+            $('.title_inf').css('display', 'none');
+            $('.yanzheng_main3 p').eq(0).css('border-color', '#e0e0e0');
+        });
+
+        //1.手机号非空和手机号正则判断
+        $('.yanzheng_main3 .yanzhengma').click(function () {
+            let phone_number3 = $('.phone_number3').val().trim();
+            if (!phone_number3) {//如果没有手机号输入，确点击获取验证码
+                $('.title_inf').html('请输入手机号').css('display', 'block');
+                $('.yanzheng_main3 p').eq(0).css('border', '1px solid #f56600');
+                $('.phone_number3').focus()
+            } else if (phone_number3) {
+                let true_or_fales = checkdeg.phone_number(phone_number3);
+                if (true_or_fales == false) {
+                    $('.title_inf').html('手机号格式错误').css('display', 'block');
+                } else if (true_or_fales == true) {//手机号通过正则验证，且发送了验证码
+                    $.ajax({
+                        type: 'post',
+                        url: '../api/yanzheng.php',
+                        data: {
+                            userphone: phone_number3
+                        },
+                        async: true,
+                        success: str => {
+                            let arr = JSON.parse(str);
+                            let arr2 = arr.phonecode;
+                            panduan(arr2)
+                        }
+                    });
+                    function panduan(arr2) {//将验证码和手机号输入到数据库
+                        let yanzhengma = arr2;
+                        $.ajax({
+                            type: 'get',
+                            url: '../api/phoneyanzheng.php',
+                            data: {
+                                yanzhengma: arr2,
+                                userphone: phone_number3
+                            }
+                        })
+                    };
+                }
+            }
+        });
+        //2.点击立即登录获取验证码和手机号
+        $('.lijidenglu').click(function () {
+            let phone_number4 = $('.phone_number3').val().trim();
+            let yanzhengma2 = $('.denglu_yanzhengma').val().trim();
+            if (!phone_number4) {//如果没有手机号输入，确点击获取验证码
+                $('.title_inf').html('请输入手机号').css('display', 'block');
+            } else if (phone_number4 && !yanzhengma2) {
+                $('.title_inf').html('请输入验证码').css('display', 'block');
+            } else if (phone_number4 && yanzhengma2) {
+                $.ajax({
+                    type: 'get',
+                    url: '../api/checklast.php',
+                    data: {
+                        yanzhengma2: yanzhengma2,
+                        phone_number4: phone_number4
+                    },
+                    success: str => {
+                        if (str == 1) {
+                            setcookie('name', phone_number4, 7);
+                            var lujing2 = localStorage.getItem('lujing');//注册成功后跳转到之前页面
+                            if (lujing2) {
+                                location.href = lujing2;
+                            } else { //如果本地没有存储路径，跳转到主页
+                                location.href = '../mian.html'
+                            }
+                        } else if (str == 0) {
+                            $('.title_inf').html('验证码错误，请重新获取').css('display', 'block');
+                        }
+                    }
+                })
+            }
+        });
+
+
+
+    })();
+</script>
+
+</html>

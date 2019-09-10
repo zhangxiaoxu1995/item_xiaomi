@@ -1,0 +1,397 @@
+#mibox #main{
+    background-color: #f5f5f5;
+}
+#mibox #main .content {
+    height: 5632px;
+    margin: auto;
+}
+#mibox #main .content .main_banner{
+    margin-top: 35px;
+}
+#mibox #main .content .main_banner:nth-child(1){
+    margin-top: 22px;
+}
+#mibox #main .content .centet_main1{
+    padding-top: 41px;
+}
+#mibox #main .content .centet_main1>p{
+    display: flex;
+    justify-content: space-between;
+  
+    line-height: 22px;
+    margin-bottom: 18px;
+}
+#mibox #main .content .centet_main1>p span:nth-child(1){
+    font-size: 22px;
+    color: #333;
+    font-weight: 200;
+}
+#mibox #main .content .centet_main1>p span:nth-child(2){
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+#mibox #main .content .centet_main1>p span:nth-child(2):hover{
+    color: orange
+}
+#mibox #main .content .centet_main1>p span:nth-child(2) i:hover{
+    background-color: orange
+}
+#mibox #main .content .centet_main1>p span:nth-child(2) i{
+    font-size: 16px;
+    color: #333;
+    width: 20px;
+    height: 20px;
+display: inline-block;
+    background-color: #b0b0b0;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 200;
+    color: #fff;
+    margin-left: 10px;
+}
+#mibox #main .content .centet_main1>div  .first_left{
+    height: 614px;
+    width: 234px;
+    margin-right: 14px;
+}
+#mibox #main .content .centet_main1>div  .first_left:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0,-2px,0);
+    cursor: pointer;
+}
+#mibox #main .content .centet_main1>div  .first_right{
+  width: 978px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+#mibox #main .content .centet_main1>div  .first_right li{
+  /* float: left; */
+  width: 234px;
+  height: 300px;
+  background-color: #fff;
+  margin-right: 14px;
+  text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+
+}
+#mibox #main .content .centet_main1>div  .first_right li:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0,-2px,0);
+    cursor: pointer;
+}
+#mibox #main .content .centet_main1>div  .first_right li img{
+    margin-bottom: 18px;
+    width: 160px;
+    height: 160px;
+}
+#mibox #main .content .centet_main1>div  .first_right li h5{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 8px;
+}
+#mibox #main .content .centet_main1>div  .first_right li h6{
+    font-size: 12px;
+   color: #b0b0b0;
+    line-height: 12px;
+    margin-bottom: 18px;
+}
+#mibox #main .content .centet_main1>div  .first_right li p span{
+    font-size: 14px;
+    line-height: 14px;
+}
+#mibox #main .content .centet_main1>div  .first_right li p span:nth-child(1){
+   color: #ff6700;
+}
+#mibox #main .content .centet_main1>div  .first_right li p span:nth-child(2){
+    color: #b0b0b0;
+    text-decoration: line-through
+ }
+#mibox #main .content .centet_main1>div  .first_right li:nth-child(4),
+#mibox #main .content .centet_main1>div  .first_right li:nth-child(8){
+    margin-right: 0px;
+}
+#mibox #main .content .centet_main1>div  .first_right li:nth-child(-n+4){
+   margin-bottom: 14px;
+}
+/* 重复的数据 */
+#mibox #main .content .often_box{
+    padding-top: 40px;
+}
+#mibox #main .content .often_box .often_box_top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+#mibox #main .content .often_box .often_box_top h3{
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 900;
+}
+#mibox #main .content .often_box .often_box_top .often_box_title span{
+    position: relative;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+#mibox #main .content .often_box .often_box_top .often_box_title span:nth-child(1){
+    margin-right: 30px;
+    border-bottom: 2px solid #ff6700;
+}
+#mibox #main .content .often_box .often_box_main{
+height: 614px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_left{
+    width: 234px;
+    height: 100%;
+}
+#mibox #main .content .often_box .often_box_main .often_box_left li{
+   height: 300px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_left li:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0,-2px,0);
+    cursor: pointer;
+}
+#mibox #main .content .often_box .often_box_main .often_box_left li:nth-child(1){
+    margin-bottom: 14px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right{
+    height: 100%;
+    width: calc(100% - 248px);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li{
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    margin-right: 14px;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li:nth-child(-n+4){
+    margin-bottom: 14px;
+ }
+#mibox #main .content .often_box .often_box_main .often_box_right li:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0,-2px,0);
+    cursor: pointer;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li img{
+    margin-bottom: 18px;
+    width: 160px;
+    height: 160px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li h5{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 8px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li h6{
+    font-size: 12px;
+   color: #b0b0b0;
+    line-height: 12px;
+    margin-bottom: 18px;
+}
+
+#mibox #main .content .often_box .often_box_main .often_box_right li p span{
+    font-size: 14px;
+    line-height: 14px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li p span:nth-child(1){
+   color: #ff6700;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right li p span:nth-child(2){
+    color: #b0b0b0;
+    text-decoration: line-through
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small{
+     width: 234px;
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small div{
+     height: 142px;
+     background-color: #fff;
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small div:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0,-2px,0);
+    cursor: pointer
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(1){
+   margin-bottom: 14px;
+   padding-top: 44px;
+   padding-left: 30px;
+   box-sizing: border-box;
+   position: relative;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(1) img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 20px;
+    top: 32px;
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(1) p{
+     width: 90px;
+     font-size: 11px;
+   
+ }
+ #mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(1) p:nth-child(2){
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+#mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(1) p:nth-child(3){
+    color: #ff6700;
+
+}
+#mibox #main .content .often_box .often_box_main .often_box_right_small div:nth-child(2){
+    margin-bottom: 14px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding-top: 56px;
+    font-size: 20px;
+    line-height: 20px;
+    background-image: url(../images/jiantou.jpg);
+    background-repeat: no-repeat;
+    background-position: 150px 44px;
+ }
+
+
+#mibox #main .content .often_box .often_box_main .often_box_right li:nth-child(4),
+#mibox #main .content .often_box .often_box_main .often_box_right li:nth-child(8){
+    margin-right: 0
+}
+#mibox #main .content #yingyin {
+    padding-top: 40px;
+}
+#mibox #main .content #yingyin .yingyin_top{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 18px;
+}
+#mibox #main .content #yingyin .yingyin_top span:nth-child(1){
+    font-size: 22px;
+    line-height: 22px;
+}
+#mibox #main .content #yingyin .yingyin_top span:nth-child(2){
+    font-size: 16px;
+    line-height: 22px;
+ 
+}
+#mibox #main .content #yingyin .yingyin_top span:nth-child(2):hover{
+   color: #ff6700
+}
+
+#mibox #main .content #yingyin .yingyin_top span:nth-child(2):hover .small{
+    background-color: #ff6700
+ }
+#mibox #main .content #yingyin .yingyin_top span:nth-child(2) .small{
+   width: 20px;
+   height: 20px;
+   display: inline-block;
+   background-color: #ccc;
+   border-radius: 100%;
+   text-align: center;
+   color: #fff;
+   line-height: 20px;
+   font-size: 16px;
+   margin-left: 8px;
+}
+#mibox #main .content #yingyin .yingyin_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+#mibox #main .content #yingyin .yingyin_bottom li{
+    width: 296px;
+    height: 284px;
+    box-sizing: border-box;
+    font-size: 0;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+#mibox #main .content #yingyin .yingyin_bottom li .fudong{
+    position: absolute;
+    left: 20px;
+   top: 146px;
+    width: 32px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+#mibox #main .content #yingyin .yingyin_bottom li:hover{
+    transform: translate3d(0,-2px,0);
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+}
+#mibox #main .content #yingyin .yingyin_bottom li:hover .fudong{
+   background-color: #ff6700;
+   border-color: #ff6700;
+}
+
+#mibox #main .content #yingyin .yingyin_bottom li img{
+    width: 100%;
+    height: 180px;
+    margin-bottom: 33px;
+}
+#mibox #main .content #yingyin .yingyin_bottom li p:nth-child(3){
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 12px;
+}
+#mibox #main .content #yingyin .yingyin_bottom li p:nth-child(4){
+    font-size: 12px;
+    line-height: 12px;
+    color: #b0c1dc
+}
+#mibox #main .content #yingyin #bofang{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 50;
+    width: 880px;
+    height: 400px;
+    background-color: #f5f5f5;
+    display: none
+}
+#mibox #main .content #yingyin #bofang input{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    background-color: #f5f5f5;
+    font-size: 20px;
+    text-align: center;
+    color: #ccc;
+    border-radius: 100%;
+}
+#mibox #main .content #yingyin #bofang input:hover{
+    background-color: red;
+    color: #fff;
+}
+#mibox #main .content #yingyin #bofang video{
+    width: 100%;
+    height: 352px;
+    position: absolute;
+    bottom: 0;
+}

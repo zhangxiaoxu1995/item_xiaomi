@@ -1,0 +1,234 @@
+<link rel="stylesheet" href="../css/list_center.css">
+<div id="centers">
+    <div class="content">
+        <div class="check clearfix">
+            <div class="left fl">
+                <a href="###">推荐</a>
+                <a href="###">新品</a>
+                <a href="###" class="price_order">价格</a>
+                <a href="###">评论最多</a>
+                <input type="text" class="onesss">
+                <span>~</span>
+                <input type="text">
+                <input type="button" value="查询" class="chaxun">
+            </div>
+            <ul class="right fr clearfix">
+                <li>
+                    <input type="checkbox" name="" id="">
+                    <a href="">查看评论</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="" id="">
+                    <a href="">仅显示特惠商品</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="" id="">
+                    <a href="">仅显示有货商品</a>
+                </li>
+            </ul>
+        </div>
+        <ul id="shop" class=" clearfix">
+        </ul>
+        <div id="shop_page">
+            <span class="to_left">&lt;</span>
+            <div class="page_num">
+
+            </div>
+            <span class="to_right">&gt;</span>
+        </div>
+        <div id="cai">
+            <div class="top">
+                <span class="line"></span>
+                <span>猜你喜欢</span>
+                <span class="line"></span>
+            </div>
+            <div class="bottom">
+                <ul>
+                </ul>
+            </div>
+            <ul class="bottom_point">
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    ; (function () {
+        // 初始数据
+        let ipage = 1;//页面数、第几页
+        let ones = 0;//最低价格，默认0
+        let twos = 999999;//最高价格
+        let order = '';//升序，降序，默认排列顺序为数据库uid顺序
+        let mohus = ''//模糊查询搜索值
+
+        showing();//初始渲染页面
+        function showing() {
+            //1、获取数据
+            $.ajax({
+                type: 'get',
+                url: '../api/liebiaoye.php',
+                data: {
+                    order: order,//升序降序
+                    ipage: ipage,//页码数
+                    num: 24,//每页24条
+                    one: ones,
+                    two: twos,
+                    mohu: mohus
+                },
+                success: str => {
+                    let shop_main = JSON.parse(str).data;
+                    creat_shop(shop_main);
+                    creat_page(JSON.parse(str).total, JSON.parse(str).num)
+                }
+            });
+            function creat_shop(shop_main) {//2、数据渲染
+                let creat_shops = shop_main.map(function (item) {
+                    let new_arr = Object.values(item);
+                    let small_list = new_arr.slice(5);
+                    return `<li data-id='${item.uid}'>
+                        <p class="title">
+                            <a href="###">
+                                <i></i>喜欢</a>
+                            <a href="###">
+                                查看详情
+                                <i></i>
+                            </a>
+                        </p>
+                        <a href="###">
+                            <img src="${item.big_img}" alt="" class="big_img">
+                        </a>
+                        <p class="shop_name">${item.list_name}</p>
+                        <div class="shop_price">
+                            <span>${item.now_price}元</span>
+                            <span>${item.old_price}元</span>
+                        </div>
+                        <ul class="small_img clearfix">
+                                ${small_list.map(function (ele) {
+                            if (ele != '') {
+                                return ` <li>
+                                    <img src="${ele}" alt="">
+                                </li>`
+                            }
+                        }).join('')}
+                        </ul>
+                    </li>`
+                }).join('');
+                $('#shop').html(creat_shops);
+            };
+            // 3、滑过小图片，小图片，变成大图片
+            $('#shop ').on('mouseover', 'li .small_img li', function () {
+                $(this).css('border-color', '#ff6700').siblings().css('border-color', '#dfe0dd');
+                let img_src = $(this).find('img').attr('src');//小图直接变大图，会模糊，通过正则，修改小图中尺寸34为200，图片就不会模糊了
+                var reg = /34/g;
+                var ss = img_src.replace(reg, 200);
+                $(this).parent().prev().prev().prev().find('img').attr('src', ss);
+            });
+            // 4、渲染页码
+            function creat_page(zongtiaoshu, meiyegeshu) {
+                let total = Math.ceil(zongtiaoshu / meiyegeshu);
+                let spanstr = '';
+                for (let i = 0; i < total; i++) {
+                    spanstr += `<span>${i + 1}</span>`;
+                };
+                $('.page_num').html(spanstr);
+                $('.page_num span').eq(ipage - 1).css({
+                    'background-color': '#757575',
+                    'color': '#fff'
+                })
+            }
+        };
+        // 点击对应数字页码，切换数据
+        $('.page_num').on('click', 'span', function () {
+            ipage = ($(this).index()) + 1;
+            showing();
+        });
+        // 点击左右页码，切换数据
+        $('.to_left').click(function () {
+            ipage--;
+            if (ipage < 0) {//最小范围约束
+                ipage = 0;
+            };
+            showing();
+        });
+        $('.to_right').click(function () {
+            ipage++;
+            if (ipage > $('.page_num span').size()) {//最大范围约束
+                ipage = $('.page_num span').size();
+            };
+            showing();
+        });
+        // 点击价格按钮，进行升降排序(筛选时，数据库商品的价格，不能带文字，切表的类型要为int)
+        $('.price_order').click(function () {
+            if (order == '' || order == 'desc') {
+                order = 'asc';
+            } else if (order == 'asc') {
+                order = 'desc';
+            }
+            showing();
+        });
+        //点击放大镜，进行模糊搜索查询
+        $('.logo_right input').eq(1).click(function () {
+            mohus = $(this).prev().val().trim();
+            ones = $('.onesss').val().trim();
+            twos = $(this).prev().val().trim();
+            showing();
+        });
+        //价格区间搜索
+        $('.chaxun').click(function () {
+            ones = $('.onesss').val().trim();
+            twos = $(this).prev().val().trim();
+            if (!ones && !twos) {
+                ones = 0;
+                twos = 999999999;
+            } else if (!ones && twos) {
+                ones = 0;
+                twos = $(this).prev().val().trim();
+            } else if (ones && !twos) {
+                ones = $('.onesss').val().trim();
+                twos = 999999999;
+            } else if (ones && twos) {
+                ones = $('.onesss').val().trim();
+                twos = $(this).prev().val().trim();
+            }
+            showing();
+        });
+        //渲染猜你想要
+        var show_like = new Promise(resolved => {
+            $.ajax({
+                type: 'get',
+                url: '../api/show_like.php',
+                success: str => {
+                    let show_like_arr = JSON.parse(str);
+                    resolved(show_like_arr)
+                }
+            })
+        });
+        show_like.then(show_like_arr => {
+            let show_like_show = show_like_arr.map(function (item) {
+                return `<li data-id='${item.uid}'>
+                        <img src="${item.name_img}" alt="">
+                        <p>${item.name}</p>
+                        <p>${item.price}</p>
+                        <p>加入购物车</p>
+                    </li>`
+            }).join('');
+            $('#cai .bottom>ul').html(show_like_show)
+
+
+        });
+        //点击原点，横向切换
+        $('.bottom_point li').eq(0).click(function () {
+            $('.bottom ul').css('transform', 'translateX(0%)')
+        });
+        $('.bottom_point li').eq(1).click(function () {
+            $('.bottom ul').css('transform', 'translateX(-50%)')
+        });
+        //点击跳转详情页
+        $('#shop').on('click', 'li ', function () {
+            let data_id = $(this).attr('data-id');
+            window.open('xiangqing.html?shop_uid=' + data_id);
+        });
+
+    })();
+</script>

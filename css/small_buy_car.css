@@ -1,0 +1,86 @@
+/* 小购物车 */
+ #top .content .right .buycar:hover #buycar_son{
+    transition:all 10s;
+    display: block;
+}
+ .buycar #buycar_son{
+     position: absolute;
+     top: 40px;
+     right: 0;
+     box-shadow: 0 2px 10px rgba(0,0,0,.15);
+     display: none;
+     background-color: #fff;
+     z-index: 1;
+     width: 316px;
+     padding: 15px 20px 0;
+     box-sizing: border-box;
+ }
+.buycar #buycar_son li{
+     height: 80px;
+     border-bottom: 1px solid #ccc;
+     text-align: left;
+     display: flex;
+    align-items: center
+ }
+ .buycar #buycar_son li img{
+     width: 60px;
+     height: 60px;
+ }
+ .buycar #buycar_son li .shuliang{
+     margin-right: 10px;
+ }
+ .buycar #buycar_son li .shuliang i{
+    color: #ccc;
+ }
+ .buycar #buycar_son li .shuliang span{
+     color: #ccc;
+ }
+ .buycar #buycar_son li .shanchu_lie{
+     color: #ccc;
+ }
+ .buycar #buycar_son li .shanchu_lie:hover{
+     color: #ff6700
+ }
+ .buycar #buycar_son li .shop_name_small_car{
+    width: 95px;
+    color: #424242;
+    font-size: 14px;
+    line-height: 14px;
+    margin-right: 40px;
+ }
+.buycar #buycar_son li .shop_name_small_car:hover{
+     color: #ff6700
+ }
+ .buycar #buycar_son .zhongji{
+     margin-right: 10px;
+     height: 72px;
+     color: #424242;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     line-height: 14px;
+ }
+ .buycar #buycar_son .zhongji>div:nth-child(1) {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     justify-content: center;
+     align-items: center;
+ }
+ .buycar #buycar_son .zhongji>div:nth-child(1) span{
+     font-size: 14px;
+     line-height: 14px;
+     height: 14px;
+ }
+ .buycar #buycar_son .zhongji>div:nth-child(1) span:nth-child(3){
+     color: #ff6700;
+     font-size: 18px;
+ }
+ .buycar #buycar_son .zhongji>div:nth-child(2){
+     width: 130px;
+     height: 40px;
+     background-color: #ff6700;
+     color: #fff;
+     text-align: center;
+     line-height: 40px;
+ }

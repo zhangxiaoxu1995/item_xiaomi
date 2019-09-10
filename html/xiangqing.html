@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #xiangqing {
+            height: 100%;
+        }
+
+        #xiangqing .content {
+            width: 1226px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="xiangqing">
+        <div id="topss">
+        </div>
+        <div id="center"></div>
+        <div id="bottom"></div>
+    </div>
+</body>
+<script src="../jq/jquery-1.10.1.min.js"></script>
+<script src="../js/uesfor.js"></script>
+<script>
+    ; (function () {
+        $('#topss').load('xiangqing_top.html', function () {
+
+        });
+        $('#center').load('xiangqing_center.html', function () {
+
+        });
+        $('#bottom').load('xiangqing_bottom.html', function () {
+
+        });
+
+
+    })();
+</script>
+
+</html>

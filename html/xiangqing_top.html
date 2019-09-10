@@ -1,0 +1,233 @@
+<link rel="stylesheet" href="../css/xiangqing_top.css">
+<link rel="stylesheet" href="../css/small_buy_car.css">
+<div id="top">
+    <div class="content">
+        <ul class="left fl">
+            <li>
+                <a href="../mian.html">小米商城</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">MIUI</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">loT</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">云服务</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">金融</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">有品</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">小爱开放平台</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">企业团购</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">资质证照</a>
+                <span class="sep">|</span>
+            </li>
+            <li>
+                <a href="###">协议规则</a>
+                <span class="sep">|</span>
+            </li>
+            <li class="xiazai">
+                <a href="###">下载app</a>
+                <p class="xiazai-img">
+                    <span>小米商城APP</span>
+                </p>
+                <span class="sep">|</span>
+            </li>
+        </ul>
+        <div class="right fr">
+            <a href="###" target="_black" class="denglu">登录</a>
+            <a href="###" class="zhuce">注册</a>
+            <a href="">消息通知</a>
+            <a href="###" class="buycar">购物车(
+                <span class="buy_arr">0</span>)
+                <ul id="buycar_son">
+                    <div class="one_first">
+                    </div>
+                    <div class="zhongji">
+                        <div>
+                            <span class="gongji">共&nbsp;
+                                <i>0</i>&nbsp;件商品</span>
+                            <br>
+                            <span class="zuihoujiage"></span>
+                        </div>
+                        <div class="quba_cai">去购物车结算</div>
+                    </div>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="logo">
+    <div class="content ">
+        <div class="logo_left fl">
+            <a href="../mian.html" title="小米官网">
+                <h1>
+                    小米
+                </h1>
+            </a>
+        </div>
+        <div class="logo_center fl ">
+            <ul class="logo_list clearfix">
+                <li>小米手机</li>
+                <li>Redmi红米</li>
+                <li>电视</li>
+                <li>笔记本</li>
+                <li>家电</li>
+                <li>路由器</li>
+                <li>智能硬件</li>
+                <li>服务</li>
+                <li>社区</li>
+            </ul>
+            <div id="copy_content">
+                <ul class=" clearfix">
+                </ul>
+            </div>
+        </div>
+        <div class="logo_right fr">
+            <input type="text" class="logo_right_main">
+            <input type="button">
+            <ul class="logo_right_son">
+                <li>小米1</li>
+                <li>小米2</li>
+                <li>小米3</li>
+                <li>小米4</li>
+                <li>小米5</li>
+                <li>小米6</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="../js/small_buy_car.js"></script>
+<script>
+    ; (function () {
+
+        //进入页面，获取cookie
+        let use_name = getcookie('name');
+        if (use_name) {//有缓存，显示用户名和退出
+            $('.denglu').html(use_name);
+            $('.zhuce').html('退出');
+        } else {
+            $('.denglu').html('登录');
+            $('.zhuce').html('注册');
+        }
+        var xiangqing_lujing = window.location.href;
+        if ($('.zhuce').html() == '退出') {//点击退出，刷新页面，清除缓存
+            $('.zhuce').click(function () {
+                removecookie('name');
+                location.reload();
+                localStorage.setItem('lujing', xiangqing_lujing);
+            });
+        } else if ($('.zhuce').html() == '注册') {
+            $('.zhuce').click(function () {
+                localStorage.setItem('lujing', xiangqing_lujing);
+                window.open('zhuce.html?');
+            });
+        }
+        $('.denglu').click(function () {
+            localStorage.setItem('lujing', xiangqing_lujing);
+            window.open('denglu.html?');
+        })
+
+
+        // 移入移出渲染图片
+        $('.logo_center .logo_list li:lt(7)').mouseover(function () {
+            $.ajax({
+                type: 'get',
+                url: '../api/logo_list.php',
+                data: {
+                    page: $(this).index() + 1
+                },
+                success: str => {
+                    $arr = JSON.parse(str);
+
+                    creat($arr)
+                }
+            });
+            function creat(arr) {
+                let logo_html = arr.map(function (item) {
+                    return ` <li>
+                                <a href="###">
+                                    <img src="${item.url}"
+                                        alt="">
+                                    <p class="p1">${item.name}</p>
+                                    <p class="p2">${item.price}</p>
+                                </a>
+                            </li>`
+                }).join('');
+                $('#copy_content ul').html(logo_html)
+            };
+        });
+
+        $('.logo_center').mouseout(function () {
+            $('#copy_content').css('display', 'none');
+        }).mouseover(function () {
+            $('#copy_content').css('display', 'block')
+        });
+        //搜索框移入移出边框颜色变化
+        $('.logo_right').mouseover(function () {
+            $('.logo_right input').css('border-color', 'black')
+        });
+        $('.logo_right').mouseout(function () {
+            $('.logo_right input').css('border-color', '#ccc')
+        });
+        // 搜索框获取焦点，边框颜色改变
+        $('.logo_right input').focus(function () {
+            //搜索框失去焦点时，显示下拉
+            $('.logo_right_son').css('display', 'block')
+            $('.logo_right input').css('border-color', 'orange');
+            //上下回车键，搜索框变化
+            // 下键
+            let num = -1;
+            document.onkeydown = ev => {
+                if (ev.keyCode == 40) {//向下
+                    num++;
+                    if (num == $('.logo_right_son li').length) {
+                        num = 0
+                    }
+                    $('.logo_right_son li').eq(num).addClass('active').siblings().removeClass()
+                }
+                // 上键
+                if (ev.keyCode == 38) {//向下
+                    num--;
+                    if (num < 0) {
+                        num = $('.logo_right_son li').length - 1
+                    }
+                    $('.logo_right_son li').eq(num).addClass('active').siblings().removeClass()
+                }
+                // 回车
+                let logo_right_main = document.getElementsByClassName('logo_right_main')[0];
+                if (ev.keyCode == 13) {
+                    let dijige = $('.logo_right_son li').eq(num).html();
+                    logo_right_main.value = dijige;
+                    $('.logo_right_son').css('display', 'none')
+                }
+            }
+        }).blur(function () {
+            //搜索框失去焦点时，隐藏下拉
+            $('.logo_right_son').css('display', 'none')
+        });
+
+
+        // 小购物车渲染
+        small_buy_car(use_name)
+
+    })();
+</script>

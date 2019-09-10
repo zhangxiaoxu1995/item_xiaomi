@@ -1,0 +1,233 @@
+/* top */
+#xiangqing #top {
+    background-color: #333333;
+}
+#xiangqing #top .content {
+    width: 1226px;
+    height: 40px;
+    margin: auto;
+ 
+}
+#xiangqing #top .content .left li{
+    float: left
+ }
+ #xiangqing #top .content .left li a{
+    line-height: 40px;
+    display: inline-block;
+    color: #b0b0b0;
+    padding: 0 4px;
+    font-size: 11px;
+    text-align: center
+ } 
+ #xiangqing #top .content .left li a:hover{
+     color: #fff;
+ }
+ #xiangqing #top .content .left  .xiazai{
+     position: relative;
+ }   
+ #xiangqing #top .content .left  .xiazai span{
+     position: absolute;
+     bottom: 5px;
+     text-align: center;
+     width: 100%;
+ }
+ #xiangqing #top .content .left .xiazai:hover .xiazai-img{
+ display: block
+ }
+ #xiangqing #top .content .left .xiazai .xiazai-img{
+     position: absolute;
+     width: 120px;
+     height: 140px;
+     background-color: #fff;
+     top:40px;
+     left: 50%;
+     transform: translateX(-50%);
+     background-image: url(../images/toplist.png);
+     background-size: 90px 90px;
+     background-position:center 20px;
+     background-repeat: no-repeat;
+     box-shadow: 0 1px 5px #aaa;
+     display: none;
+     z-index: 1;
+ }
+ #xiangqing #top .content .left .sep{
+     color: #424242;
+ }
+ #xiangqing #top .content .right a{
+     display: inline-block;
+     color: #b0b0b0;
+     text-align: center;
+     line-height: 40px;
+     font-size: 12px;
+     
+ }
+ #xiangqing #top .content .right .buycar{
+ width: 120px;
+ height: 40px;
+ background-color: #424242;
+ position: relative;
+ 
+ }
+ 
+ #xiangqing #top .content .right .buycar:hover {
+     color: #ff6700;
+     background-color: #fff;
+     
+ }
+ /* #xiangqing #top .content .right .buycar:hover .buycar_son{
+     transition:all 10s;
+     display: block;
+
+ } */
+ /* #xiangqing #top .content .right .buycar .buycar_son{
+     position: absolute;
+     top: 40px;
+     right: 0;
+     box-shadow: 0 2px 10px rgba(0,0,0,.15);
+     display: none;
+     background-color: #fff;
+     z-index: 1;
+     width: 316px;
+ } */
+ /* logo */
+ #xiangqing #logo{
+    position: relative;
+}
+#xiangqing #logo .content {
+    height: 100px;
+    margin: auto;
+   
+}
+#xiangqing #logo .content .logo_left{
+    width: 55px;
+    height: 100%;
+    margin-right: 178px;
+}
+#xiangqing #logo .content .logo_left h1{
+   height: 100%; 
+   background-image: url(../images/logo_img.png);
+   text-indent: -9999px;
+   background-repeat: no-repeat;
+   background-position: center
+
+}
+#xiangqing #logo .content .logo_center{
+position: relative;
+}
+#xiangqing #logo .content .logo_center li{
+    float: left;
+    padding: 0 10px;
+    line-height: 99px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#xiangqing #logo .content .logo_center li:hover{
+    color: #ff6700
+}
+#xiangqing #logo #copy_content{
+    position: absolute;
+    background-color: #fff;
+    z-index: 50;
+    height: 229px;
+    top: 100px;  
+    left: -38%;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+    display: none;
+    box-shadow: 0 3px 4px rgba(0,0,0,.18);
+}
+#xiangqing #logo #copy_content ul{
+    width: 1226px;
+    height: 100%;
+    margin: auto;
+    /* background-color: #58bc58; */
+    padding-top: 34PX;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+#xiangqing #logo #copy_content ul li:last-child img{
+    border-right: none
+}
+#xiangqing #logo #copy_content ul li{
+    /* float: left; */
+    height: 100%;
+    margin: 0 2px;
+}
+#xiangqing #logo #copy_content ul li a{
+display: block
+    
+}
+#xiangqing #logo #copy_content ul li a img{
+    width: 160px;
+    height: 110px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    border-right: 1px solid #ccc;
+   
+}
+#xiangqing #logo #copy_content ul li a p{
+    text-align: center
+}
+#xiangqing #logo #copy_content ul li a .p1{
+    font-size: 12px;
+    line-height: 12px;
+    color: #333;
+    margin-bottom: 7px;
+}
+#xiangqing #logo #copy_content ul li a .p2{
+    font-size: 12px;
+    line-height: 12px;
+    color: #ff6700;
+}
+#xiangqing #logo .content .logo_right {
+    font-size: 0;
+    position: relative;
+}
+#xiangqing #logo .content .logo_right input:nth-child(1){
+    width: 244px;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin-top: 25px;
+}
+#xiangqing #logo .content .logo_right input:nth-child(2 ){
+    width: 52px;
+    height: 52px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    margin-top: 25px;
+    background-color: #fff;
+    background-image: url(../images/logo-right.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+/* #list #logo .content .logo_right input:nth-child(2 ):hover{
+    background-color: #ff6700;
+} */
+#xiangqing #logo .content .logo_right .logo_right_son {
+    position: absolute;
+    font-size: 12px;
+    top: 77px;
+    left: 0;
+    /* background-color: pink; */
+    width: calc(100% - 2px);
+    border: 1px solid orange;
+    border-top: 0;
+    z-index: 1;
+    color: rgb(58, 58, 58);
+    display: none;
+    z-index: 1;
+    background-color: #fff;
+}
+
+#xiangqing #logo .content .logo_right .logo_right_son li{
+  height: 20px;
+  padding-left: 5px;
+  line-height: 20px;
+
+}
+#xiangqing #logo .content .logo_right .logo_right_son .active{
+   background-color: rgba(228, 226, 226, 0.767)
+  }
+
